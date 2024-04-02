@@ -1,0 +1,16 @@
+<div>
+<h1>La palabra del día</h1>
+
+@for (  char of characters; track $index) {
+
+    @if ($index%5 === 0 && $index !==0) {
+        <br> 
+    }
+    <app-celda caracter="{{char.character}}" state="{{char.state}}" focus="{{char.focus}}" id="{{char.id}}" (caracterOut)="CaracterEntrante($event)" eventWord="{{char.eventchar}}"></app-celda>                
+}
+<br/><br/>
+<input type="button" value="enviar" (click)="verificar()" >
+<span>{{error}}</span>
+{{palabra}}
+
+</div>
