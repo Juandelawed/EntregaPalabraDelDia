@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CeldaComponent } from '../celda/celda.component';
 import { InCharacter, OutCharacter } from '../../models/CharacterE.model';
+import { EMPTY, isEmpty } from 'rxjs';
 
 @Component({
   selector: 'app-tablero',
@@ -16,7 +17,8 @@ export class TableroComponent implements OnInit {
     "linea",
     "kevin",
     "david",
-    "arbol"
+    "arbol",
+    "sushi"
   ]
 
   characters = this.vacio()
@@ -24,11 +26,12 @@ export class TableroComponent implements OnInit {
   WordArray: string[] = []
   caractersDeHijo: OutCharacter[] = []
   error:String = ""
+  filaActual = 1;
   
 
 
   ngOnInit(): void {
-    this.palabra = this.wordCurrent(this.Palabras)
+    this.palabra = this.wordCurrent(this.Palabras).toUpperCase()
     this.WordArray = this.palabra.split("")
 
   }
@@ -58,11 +61,11 @@ export class TableroComponent implements OnInit {
   }
 
   verificar() {
-    let WordTemp = this.caractersDeHijo.filter( elem => {
-      if(elem.character !== "", elem.character !== " "){
-        return true
+    let WordIdUser = this.caractersDeHijo.filter( elem => { //palabra ordenada, pero con id de la posicion
+      if(elem.character.trim().length === 0){
+        return false
       }
-      return false
+      return true
     })
     .sort((a, b) => {
       if(a.id > b.id){
@@ -73,44 +76,62 @@ export class TableroComponent implements OnInit {
       }
       return 0
     })
-    .map(el => el.character)
-    
+    let WordUser = WordIdUser.map(el => el.character) //solo muestra los caracteres
 
-    if(WordTemp.length === 5){
-      let palabraRecostruida = WordTemp.join("").toUpperCase()
+    if(WordUser.length === 5){
+      let palabraRecostruida = WordUser.join("").toUpperCase()
 
       if (palabraRecostruida === this.palabra.toLocaleUpperCase()) {
         this.caractersDeHijo.forEach(elem =>{
           this.characters[this.characters.findIndex(el => el.id === elem.id)]
-          .eventchar =  "CORRECT-WORD" // "VOID-WORD", "INCORRECT-WORD", "YELLOW-WORD", "CORRECT-WORD"
-          this.error = "ganaste"
+          .eventchar =  "CORRECT-WORD" // "VOID-WORD", "INCORRECT-WORD", "YELLOW-WORD", "CORRECT-WORD" 
         })
-      }
+        this.error = "ganaste"    
+        return
+      }else{
+          WordIdUser.forEach((elem, i) => {
+          if(elem.character === this.WordArray[i]){
+            this.characters[this.characters.findIndex(el => el.id === elem.id)]
+            .eventchar = "CORRECT-WORD";
 
-      console.log()
+          }else if(this.WordArray.includes(elem.character)){
+            this.characters[this.characters.findIndex(el => el.id === elem.id)]
+            .eventchar = "YELLOW-WORD";
+          }else{
+            this.characters[this.characters.findIndex(el => el.id === elem.id)]
+            .eventchar = "INCORRECT-WORD";
+          }
+        })
+        this.filaActual++;
+      }
+      this.filasHabiles(this.filaActual);
+      this.caractersDeHijo = []
+      console.log();
     }
     else{
-      this.error = "Hay espacios vacios"
+      this.error = "Hay espacios vacios";
     }
     
 
 
   }
 
-  compareArrays(arr1:[], arr2:[]){
 
-    let arrIndex:number[] = []
-    arr1.forEach((elem, i)=>{
-      if (elem === arr2[i]) {
-        arrIndex.push(i);
-      }
-    })
-    return arrIndex
+  filasHabiles(fila:number){
+    let columnaIncial = (fila * 5) - 5 ;
+    let columnaFinal = (fila * 5) 
+    for (let i = 0 ; i < this.characters.length ; i++) {
+      const el = this.characters[i];
 
+      if (columnaIncial <= i && i < columnaFinal) {
+        el.state = false
+      }else{
+        el.state = true
+      } 
+    }
   }
 
   CaracterEntrante(msgEntrante: OutCharacter) {
-
       let encontrar = this.caractersDeHijo.find((el) => el.id === msgEntrante.id)
 
 

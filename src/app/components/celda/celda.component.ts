@@ -14,7 +14,7 @@ export class CeldaComponent implements OnInit, AfterViewInit {
   @Input({required: true}) caracter!:string
   @Input({transform: booleanAttribute}) focus:boolean = false
   @Input({required: true, transform: booleanAttribute }) state:boolean = false
-  @Input({transform: numberAttribute}) id!:number 
+  @Input({transform: numberAttribute}) id:number = 0
   @Input() eventWord:string = "VOID-WORD" // "VOID-WORD", "INCORRECT-WORD", "YELLOW-WORD", "CORRECT-WORD"
 
 
