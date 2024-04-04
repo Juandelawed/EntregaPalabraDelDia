@@ -6,7 +6,7 @@
     @if ($index%5 === 0 && $index !==0) {
         <br> 
     }
-    <app-celda caracter="{{char.character}}" state="{{char.state}}" focus="{{char.focus}}" id="{{char.id}}" (caracterOut)="CaracterEntrante($event)" eventWord="{{char.eventchar}}"></app-celda>                
+    <app-celda caracter="{{char.character}}" state="{{char.state}}" focus="{{char.focus}}" id="{{char.id}}" (caracterOut)="CaracterEntrante($event)" eventWord="{{char.eventchar}}" ></app-celda>                
 }
 <br/><br/>
 <input type="button" value="enviar" (click)="verificar()" >
