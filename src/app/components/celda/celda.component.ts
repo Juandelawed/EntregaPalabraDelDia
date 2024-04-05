@@ -20,7 +20,7 @@ export class CeldaComponent implements OnInit, AfterViewInit {
 
   // @ViewChild(input) txt!: ElementRef ;
   @Output() caracterOut = new EventEmitter<OutCharacter>()
-  constructor(private render: Renderer2){}
+  constructor(){}
 
   ngOnInit(): void {
     
@@ -30,10 +30,12 @@ export class CeldaComponent implements OnInit, AfterViewInit {
   }
 
   OnKey(){
+    if(true)
     this.caracterOut.emit({
       id:this.id,
       character:this.caracter.toUpperCase()
     })
+
   }
 
  
