@@ -28,6 +28,7 @@ export class CeldaComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit(): void {
   }
+ 
 
   OnKey(){
     if(true)

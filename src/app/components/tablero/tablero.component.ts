@@ -19,7 +19,8 @@ export class TableroComponent implements OnInit {
     "david",
     "arbol",
     "sushi",
-    "perea"
+    "perea",
+    "perra"
   ]
 
   characters = this.vacio()
@@ -54,6 +55,7 @@ export class TableroComponent implements OnInit {
     }
     return lista
   }
+  
 
   wordCurrent(arr: string[]) {/// donde se decubre que palabra que se usara
     let size = arr.length
