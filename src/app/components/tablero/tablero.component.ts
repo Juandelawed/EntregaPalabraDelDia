@@ -2,11 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { CeldaComponent } from '../celda/celda.component';
 import { InCharacter, OutCharacter } from '../../models/CharacterE.model';
 import { EMPTY, isEmpty } from 'rxjs';
+import { TecladoComponent } from '../teclado/teclado.component';
 
 @Component({
   selector: 'app-tablero',
   standalone: true,
-  imports: [CeldaComponent],
+  imports: [CeldaComponent,TecladoComponent],
   templateUrl: './tablero.component.html',
   styleUrl: './tablero.component.sass'
 })
