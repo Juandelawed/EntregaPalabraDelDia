@@ -1,2 +1,2 @@
 
-<input [className]="eventWord" type="text" [(ngModel)]="caracter" maxlength="1" [disabled]="state" (input)="OnKey()" #celda{{id}} pattern='^[a-zA-Z]+$'  >
+<input [className]="eventWord" type="text" [(ngModel)]="caracter" maxlength="1" [disabled]="state" (input)="OnKey()" onkeypress="return ' áéíóúabcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ'.includes(event.key)"   >

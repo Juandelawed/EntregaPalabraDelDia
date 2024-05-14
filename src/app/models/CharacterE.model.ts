@@ -1,4 +1,4 @@
-export interface InCharacter{
+export interface InCharacter{ // le envia el padre(tablero) al hijo(celda)
     id:number;
     character:string;
     state:boolean;
@@ -6,7 +6,7 @@ export interface InCharacter{
     eventchar:string;
 }
 
-export interface OutCharacter{
+export interface OutCharacter{ // sale de celda a tablero
     id:number;
     character:string;
 }

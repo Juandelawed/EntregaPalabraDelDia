@@ -1,4 +1,4 @@
-import { Component, ElementRef, Input, OnInit, booleanAttribute, Renderer2, AfterViewInit, Output, EventEmitter, numberAttribute } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, booleanAttribute, Renderer2, AfterViewInit, Output, EventEmitter, numberAttribute, input } from '@angular/core';
 import { OutCharacter } from '../../models/CharacterE.model';
 import { FormsModule } from '@angular/forms';
 
@@ -20,7 +20,7 @@ export class CeldaComponent implements OnInit, AfterViewInit {
 
   // @ViewChild(input) txt!: ElementRef ;
   @Output() caracterOut = new EventEmitter<OutCharacter>()
-  constructor(private render: Renderer2){}
+  constructor(){}
 
   ngOnInit(): void {
     
@@ -34,6 +34,7 @@ export class CeldaComponent implements OnInit, AfterViewInit {
       id:this.id,
       character:this.caracter.toUpperCase()
     })
+
   }
 
  
