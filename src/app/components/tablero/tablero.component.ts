@@ -1,28 +1,32 @@
 import { Component, OnInit } from '@angular/core';
 import { CeldaComponent } from '../celda/celda.component';
 import { InCharacter, OutCharacter } from '../../models/CharacterE.model';
-import { EMPTY, isEmpty } from 'rxjs';
 import { TecladoComponent } from '../teclado/teclado.component';
+import { ComponentsService } from '../../services/components.service';
+import { wordModel } from '../../models/Words.model';
+import { PalabrasComponent } from '../palabras/palabras.component';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'app-tablero',
   standalone: true,
-  imports: [CeldaComponent,TecladoComponent],
+  imports: [CeldaComponent,TecladoComponent,PalabrasComponent, AsyncPipe],
   templateUrl: './tablero.component.html',
   styleUrl: './tablero.component.sass'
 })
 export class TableroComponent implements OnInit {
-  Palabras = [
-    "perro",
-    "uribe",
-    "linea",
-    "kevin",
-    "david",
-    "arbol",
-    "sushi",
-    "perea",
-    "perra"
-  ]
+
+  
+  Palabras: wordModel[] = []
+
+  constructor(service: ComponentsService){
+    service.getWords().subscribe( (data) =>{
+      if (!data) {
+        return 
+      }
+      this.Palabras = data.filter(data => data.length === 5 && !data.isAccent)
+    })
+  }
 
   characters = this.vacio()
   palabra: string = "" // LA PALABRA ALEATORIA ESCOGIDA
@@ -33,9 +37,9 @@ export class TableroComponent implements OnInit {
 
 
 
-  ngOnInit(): void {
-    this.palabra = this.wordCurrent(this.Palabras).toUpperCase()
-    this.WordArray = this.palabra.trim().split("")
+  ngOnInit() {
+      this.palabra =  this.wordCurrent(this.Palabras.map((elem) => elem.word)).toUpperCase()
+      this.WordArray = this.palabra.trim().split("")
 
   }
 
@@ -84,10 +88,10 @@ export class TableroComponent implements OnInit {
       })
     let WordUser = WordIdUser.map(el => el.character) //solo muestra los caracteres
     let palabraRecostruida = WordUser.join("").toUpperCase()
+      let listPalabras = this.Palabras.map(elem => elem.word)
 
 
-
-    if (!this.Palabras.includes(palabraRecostruida.toLowerCase())) {
+    if (!listPalabras.includes(palabraRecostruida.toLowerCase())) {
       this.error = "la palabra no existe en registro"
       return
     }
