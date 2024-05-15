@@ -3,10 +3,12 @@ export interface InCharacter{
     character:string;
     state:boolean;
     focus:boolean;
-    eventchar:string;
+    eventchar:EstadosCelda;
 }
 
 export interface OutCharacter{
     id:number;
     character:string;
 }
+
+export type EstadosCelda = "VOID-WORD" | "INCORRECT-WORD" | "YELLOW-WORD" | "CORRECT-WORD"
