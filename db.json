@@ -1,0 +1,362 @@
+{
+  "Words": [
+    {
+      "id": 100,
+      "difficulty": "easy",
+      "word": "sol",
+      "length": 3,
+      "isAccent": false
+    },
+    {
+      "id": 101,
+      "difficulty": "easy",
+      "word": "flor",
+      "length": 4,
+      "isAccent": false
+    },
+    {
+      "id": 102,
+      "difficulty": "easy",
+      "word": "casa",
+      "length": 4,
+      "isAccent": false
+    },
+    {
+      "id": 103,
+      "difficulty": "easy",
+      "word": "gato",
+      "length": 4,
+      "isAccent": false
+    },
+    {
+      "id": 104,
+      "difficulty": "medium",
+      "word": "puerta",
+      "length": 6,
+      "isAccent": false
+    },
+    {
+      "id": 105,
+      "difficulty": "medium",
+      "word": "ventana",
+      "length": 7,
+      "isAccent": false
+    },
+    {
+      "id": 106,
+      "difficulty": "medium",
+      "word": "bicicla",
+      "length": 7,
+      "isAccent": false
+    },
+    {
+      "id": 107,
+      "difficulty": "medium",
+      "word": "carro",
+      "length": 5,
+      "isAccent": false
+    },
+    {
+      "id": 108,
+      "difficulty": "medium",
+      "word": "perro",
+      "length": 5,
+      "isAccent": false
+    },
+    {
+      "id": 109,
+      "difficulty": "easy",
+      "word": "río",
+      "length": 3,
+      "isAccent": true
+    },
+    {
+      "id": 110,
+      "difficulty": "easy",
+      "word": "luz",
+      "length": 3,
+      "isAccent": false
+    },
+    {
+      "id": 111,
+      "difficulty": "medium",
+      "word": "cable",
+      "length": 5,
+      "isAccent": false
+    },
+    {
+      "id": 112,
+      "difficulty": "easy",
+      "word": "hoja",
+      "length": 4,
+      "isAccent": false
+    },
+    {
+      "id": 113,
+      "difficulty": "medium",
+      "word": "gente",
+      "length": 5,
+      "isAccent": false
+    },
+    {
+      "id": 114,
+      "difficulty": "hard",
+      "word": "guitarra",
+      "length": 7,
+      "isAccent": false
+    },
+    {
+      "id": 115,
+      "difficulty": "medium",
+      "word": "madera",
+      "length": 6,
+      "isAccent": false
+    },
+    {
+      "id": 116,
+      "difficulty": "hard",
+      "word": "girasol",
+      "length": 7,
+      "isAccent": false
+    },
+    {
+      "id": 117,
+      "difficulty": "hard",
+      "word": "gaviota",
+      "length": 7,
+      "isAccent": false
+    },
+    {
+      "id": 118,
+      "difficulty": "hard",
+      "word": "brújula",
+      "length": 7,
+      "isAccent": true
+    },
+    {
+      "id": 119,
+      "difficulty": "medium",
+      "word": "espada",
+      "length": 6,
+      "isAccent": false
+    },
+    {
+      "id": 120,
+      "difficulty": "medium",
+      "word": "tigre",
+      "length": 5,
+      "isAccent": false
+    },
+    {
+      "id": 121,
+      "difficulty": "medium",
+      "word": "silla",
+      "length": 5,
+      "isAccent": false
+    },
+    {
+      "id": 122,
+      "difficulty": "easy",
+      "word": "rana",
+      "length": 4,
+      "isAccent": false
+    },
+    {
+      "id": 123,
+      "difficulty": "medium",
+      "word": "piano",
+      "length": 5,
+      "isAccent": false
+    },
+    {
+      "id": 124,
+      "difficulty": "medium",
+      "word": "torta",
+      "length": 5,
+      "isAccent": false
+    },
+    {
+      "id": 125,
+      "difficulty": "easy",
+      "word": "nube",
+      "length": 4,
+      "isAccent": false
+    },
+    {
+      "id": 126,
+      "difficulty": "medium",
+      "word": "abeja",
+      "length": 5,
+      "isAccent": false
+    },
+    {
+      "id": 127,
+      "difficulty": "easy",
+      "word": "corto",
+      "length": 5,
+      "isAccent": false
+    },
+    {
+      "id": 128,
+      "difficulty": "medium",
+      "word": "golfo",
+      "length": 5,
+      "isAccent": false
+    },
+    {
+      "id": 129,
+      "difficulty": "medium",
+      "word": "plato",
+      "length": 5,
+      "isAccent": false
+    },
+    {
+      "id": 130,
+      "difficulty": "medium",
+      "word": "piedra",
+      "length": 6,
+      "isAccent": false
+    },
+    {
+      "id": 131,
+      "difficulty": "medium",
+      "word": "lápiz",
+      "length": 5,
+      "isAccent": true
+    },
+    {
+      "id": 132,
+      "difficulty": "hard",
+      "word": "manzana",
+      "length": 7,
+      "isAccent": false
+    },
+    {
+      "id": 133,
+      "difficulty": "medium",
+      "word": "ratón",
+      "length": 5,
+      "isAccent": true
+    },
+    {
+      "id": 134,
+      "difficulty": "medium",
+      "word": "limón",
+      "length": 5,
+      "isAccent": true
+    },
+    {
+      "id": 135,
+      "difficulty": "medium",
+      "word": "globo",
+      "length": 5,
+      "isAccent": false
+    },
+    {
+      "id": 136,
+      "difficulty": "medium",
+      "word": "silla",
+      "length": 5,
+      "isAccent": false
+    },
+    {
+      "id": 137,
+      "difficulty": "easy",
+      "word": "cama",
+      "length": 4,
+      "isAccent": false
+    },
+    {
+      "id": 138,
+      "difficulty": "medium",
+      "word": "bolsa",
+      "length": 5,
+      "isAccent": false
+    },
+    {
+      "id": 139,
+      "difficulty": "easy",
+      "word": "mesa",
+      "length": 4,
+      "isAccent": false
+    },
+    {
+      "id": 140,
+      "difficulty": "easy",
+      "word": "pera",
+      "length": 4,
+      "isAccent": false
+    },
+    {
+      "id": 141,
+      "difficulty": "medium",
+      "word": "tijera",
+      "length": 6,
+      "isAccent": false
+    },
+    {
+      "id": 142,
+      "difficulty": "medium",
+      "word": "jabón",
+      "length": 5,
+      "isAccent": false
+    },
+    {
+      "id": 143,
+      "difficulty": "medium",
+      "word": "pluma",
+      "length": 5,
+      "isAccent": false
+    },
+    {
+      "id": 144,
+      "difficulty": "medium",
+      "word": "plato",
+      "length": 5,
+      "isAccent": false
+    },
+    {
+      "id": 145,
+      "difficulty": "medium",
+      "word": "perla",
+      "length": 5,
+      "isAccent": false
+    },
+    {
+      "id": 146,
+      "difficulty": "medium",
+      "word": "taza",
+      "length": 4,
+      "isAccent": false
+    },
+    {
+      "id": 147,
+      "difficulty": "medium",
+      "word": "cuna",
+      "length": 4,
+      "isAccent": false
+    },
+    {
+      "id": 148,
+      "difficulty": "medium",
+      "word": "pera",
+      "length": 4,
+      "isAccent": false
+    },
+    {
+      "id": 149,
+      "difficulty": "medium",
+      "word": "suela",
+      "length": 5,
+      "isAccent": false
+    },
+    {
+      "id": 150,
+      "difficulty": "medium",
+      "word": "huevo",
+      "length": 5,
+      "isAccent": false
+    }
+  ],
+  "Users": []
+}
