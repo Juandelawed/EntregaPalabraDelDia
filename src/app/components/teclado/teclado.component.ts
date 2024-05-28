@@ -11,8 +11,7 @@ import { RouterOutlet } from '@angular/router';
 export class TecladoComponent implements OnInit {
 
   ngOnInit(): void {
+      
   }
-
-  escribir(){}
 
 }
