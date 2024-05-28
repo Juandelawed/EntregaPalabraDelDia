@@ -1,1 +1,25 @@
-<p>inicio works!</p>
+<!-- The Modal -->
+<div id="myModal" class="modal" [style.display]="ModalState">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="close" (click)="closeSelect()" >&times;</span>
+        <h2>Selecciona una dificulta</h2>
+      </div>
+      <div class="modal-body">
+        @for (diff of Difficulties; track $index) {
+          <button class="difficulty {{diff}}" (click)="selectDiff(diff)" >{{diff}}</button>
+        }
+        <!-- <section>
+          <label for="accent">jugar con acentos</label>
+          <input type="checkbox" name="accent" id="accent">
+        </section> -->
+      </div>
+      <!-- <div class="modal-footer">
+        <h3>Modal Footer</h3>
+      </div> -->
+    </div>
+  
+  </div>
+  

@@ -1,21 +1,35 @@
-<div>
-<h1>La palabra del día</h1>
+<app-inicio (outSelectDiff)="SelectDiff($event)"></app-inicio>
 
-@for (  char of characters; track $index) {
+@if ( Palabras$ | async; as PalabrasA) {
+  <div>
+    <h1>La palabra del día</h1>
 
-    @if ($index%5 === 0 && $index !==0) {
-        <br> 
+  
+    @for ( char of characters; track $index) { 
+      @if ($index%palabra.length === 0 && $index !==0){
+        <br />
+      }
+      <app-celda
+        caracter="{{ char.character }}"
+        state="{{ char.state }}"
+        focus="{{ char.focus }}"
+        id="{{ char.id }}"
+        (caracterOut)="CaracterEntrante($event)"
+        [eventWord]="char.eventchar"
+      ></app-celda>
     }
-    <app-celda caracter="{{char.character}}" state="{{char.state}}" focus="{{char.focus}}" id="{{char.id}}" (caracterOut)="CaracterEntrante($event)" eventWord="{{char.eventchar}}" ></app-celda>                
+    <br /><br />
+    <app-palabras [(Mensaje)]="error" [(arrFilaWrite)]="caractersDeHijo" [Palabras]="PalabrasA" [palabra]="palabra" [(characters)]="characters"></app-palabras>
+    <span>{{ error }}</span>
+    <span>{{ palabra }}</span>
+  </div>
+  
+  
+} @else{
+  <h1>cargando...</h1>
 }
-<br/><br/>
-<input type="button" value="enviar" (click)="verificar()" >
-<span>{{error}}</span>
-<span>{{palabra}}</span>
-</div>
 
-<app-palabras></app-palabras>
 
 <div>
-    <app-teclado></app-teclado>
+  <app-teclado></app-teclado>
 </div>

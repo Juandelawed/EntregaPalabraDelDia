@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, output } from '@angular/core';
+import { difficultyType } from '../../models/Words.model';
 
 @Component({
   selector: 'app-inicio',
@@ -9,4 +10,17 @@ import { Component } from '@angular/core';
 })
 export class InicioComponent {
 
+  outSelectDiff = output<difficultyType>()
+
+  ModalState = "block"
+  Difficulties: difficultyType[] = ["easy", "medium", "hard"]
+
+  closeSelect(){
+    this.ModalState = "none"
+  }
+  selectDiff( dificultad:difficultyType ){
+    this.outSelectDiff.emit(dificultad)
+    this.closeSelect()
+  }
+  
 }

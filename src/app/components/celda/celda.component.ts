@@ -1,4 +1,4 @@
-import { Component, ElementRef, Input, OnInit, booleanAttribute, Renderer2, AfterViewInit, Output, EventEmitter, numberAttribute } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, booleanAttribute, Renderer2, AfterViewInit, Output, EventEmitter, numberAttribute, output, input } from '@angular/core';
 import { OutCharacter } from '../../models/CharacterE.model';
 import { FormsModule } from '@angular/forms';
 
@@ -15,11 +15,11 @@ export class CeldaComponent implements OnInit, AfterViewInit {
   @Input({transform: booleanAttribute}) focus:boolean = false
   @Input({required: true, transform: booleanAttribute }) state:boolean = false
   @Input({transform: numberAttribute}) id:number = 0
-  @Input() eventWord:string = "VOID-WORD" // "VOID-WORD", "INCORRECT-WORD", "YELLOW-WORD", "CORRECT-WORD"
+  eventWord = input<string>("VOID-WORD") // "VOID-WORD", "INCORRECT-WORD", "YELLOW-WORD", "CORRECT-WORD"
 
 
   // @ViewChild(input) txt!: ElementRef ;
-  @Output() caracterOut = new EventEmitter<OutCharacter>()
+  caracterOut = output<OutCharacter>()
   constructor(){}
 
   ngOnInit(): void {
@@ -31,7 +31,7 @@ export class CeldaComponent implements OnInit, AfterViewInit {
  
 
   OnKey(){
-    if(true)
+  
     this.caracterOut.emit({
       id:this.id,
       character:this.caracter.toUpperCase()
